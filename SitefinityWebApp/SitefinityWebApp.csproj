@@ -1075,8 +1075,8 @@
     <Content Include="App_Data\RadSpell\de-DE.tdf" />
     <Content Include="App_Data\GeoLocation\GeoLite2-City.mmdb" />
     <Content Include="Mvc\Views\MessageWidget\Default.cshtml" />
-    <Content Include="Mvc\Views\Books\Index.cshtml" />
-    <Content Include="Mvc\Scripts\books.widget" />
+    <EmbeddedResource Include="Mvc\Views\Books\Index.cshtml" />
+    <EmbeddedResource Include="Mvc\Scripts\books-widget.js" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
