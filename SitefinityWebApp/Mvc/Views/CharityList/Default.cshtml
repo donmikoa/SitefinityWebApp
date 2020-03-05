@@ -1,0 +1,21 @@
+﻿@model SitefinityWebApp.Mvc.Models.CharityList
+
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using SitefinityWebApp.Mvc.Models;
+
+@Html.Script(ScriptRef.JQuery, "top")
+
+@foreach (var item in ViewBag.alphabets)
+{
+   <ol>
+       <li>
+           @item
+       </li>
+       </ol> 
+}
+    
+
+
+
+@Html.Script(Url.WidgetContent("Mvc/Scripts/Give-Script.js"), "bottom")
