@@ -48,9 +48,61 @@ namespace SitefinityWebApp.Mvc.Controllers
            
         };
 
-        public ActionResult Index()
+        private Dictionary<string, string> categoryList = new Dictionary<string, string>()
         {
-            string requestURL = "Michael";
+            {"charity-american-indian", "90021-001"},
+            {"charity-animal-protection", "90021-050"},
+            {"charity-arts-culture", "90021-100"},
+            {"charity-cancer", "90021-200"},
+            {"charity-child-sponsorships", "90021-250"},
+            {"charity-children-youth", "90021-300"},
+            {"charity-civil-rights", "90021-350"},
+            {"charity-community-development-civic-organizations", "90021-400"},
+            {"charity-education-literacy", "90021-450"},
+            {"charity-elderly", "90021-500"},
+            {"charity-environment", "90021-550"},
+            {"charity-health", "90021-600"},
+            {"charity-human-services", "90021-650"},
+            {"charity-law-public-interest", "90021-700"},
+            {"charity-local", "90021-000"},
+            {"charity-national", "90031-000"},
+            {"charity-other-charitable-organizations", "90021-950"},
+            {"charity-police-firefighter-organizations", "90021-750"},
+            {"charity-relief-development", "90021-800"},
+            {"Religious", "90021-850"},
+            {"charity-veterans-military", "90021-900"},
+            {"blind-visually-impaired", "90021-150"}
+        };
+
+        private Dictionary<string, string> categoryList2 = new Dictionary<string, string>()
+        {
+            {"American Indian", "90021-001"},
+            {"Animal Protection", "90021-050"},
+            {"Arts & Culture", "90021-100"},
+            {"Cancer", "90021-200"},
+            {"Child Sponsorship", "90021-250"},
+            {"Children & Youth", "90021-300"},
+            {"Civil Rights", "90021-350"},
+            {"Community Development & Civic Organizations", "90021-400"},
+            {"Education & Literacy", "90021-450"},
+            {"Elderly", "90021-500"},
+            {"Environment", "90021-550"},
+            {"Health", "90021-600"},
+            {"Human Services", "90021-650"},
+            {"Law & Public Interest", "90021-700"},
+            {"Local", "90021-000"},
+            {"National", "90031-000"},
+            {"Other Charitable Organizations", "90021-950"},
+            {"Police & Firefighter Organizations", "90021-750"},
+            {"Relief & Development", "90021-800"},
+            {"Religious", "90021-850"},
+            {"Veterans & Military", "90021-900"},
+            {"Blind & Visually Impaired", "90021-150"}
+        };
+
+        public ActionResult Index(string category = null)
+        {
+            string requestURL = assembleRequestUrl(category);
 
             // Create web request
             string solrSearchResponse = webRequest(requestURL);
@@ -70,24 +122,49 @@ namespace SitefinityWebApp.Mvc.Controllers
                 CharityList searchResult = result.ToObject<CharityList>();
                 resultsList.Add(searchResult);
             }
-
-            IEnumerable<CharityList> searchResults = resultsList;
-
-            // Generate ViewModel and return view
-
-            
-            ViewBag.alphabets = new List<string>()
-                {
-          "#", "A", "B", "C", "D", "E", "F", "G", "H", "I" , "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-        };
-            
-            return View("Default");
+            return this.View("Default");
         }
 
 
-        
 
-            private string webRequest(string requestURL)
+        private string assembleRequestUrl(string categories = null)
+        {
+            // Assemble request URL
+            string url = "http://192.168.225.84:8080/solr/WGA/select?q=(nationalcharity:true";
+            // string url = "http://172.16.1.36:4001/search/?term=" + term;
+
+          
+            // if (categories.HasValue) { for (category in categories){ add category into SOLR query} }
+            
+
+            if (categories != null)
+            {
+                url += " AND tobcode:";
+                url.Concat(categoryList[categories]);
+                url += ")";
+
+            }
+            else
+            {
+                url += ")";
+            }
+
+
+            // choose fields to return
+            url += "&fl=title,reporturl&rows=1000000";
+
+            // sort the response
+
+            url += "&sort=title ASC";
+
+            // format response as json
+            url += "&wt=json";
+
+
+            return url;
+        }
+
+        private string webRequest(string requestURL)
         {
             string webResponse = string.Empty;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
