@@ -6,7 +6,19 @@ using Telerik.Sitefinity.Services;
 
 namespace SitefinityWebApp.Mvc.Models
 {
-    public class CharityListViewModel
+    public sealed class CharityListViewModel
     {
+        public CharityListViewModel(IEnumerable<CharityList> results)
+        {
+            this._results = results;
+        }
+
+      
+
+        private readonly IEnumerable<CharityList> _results;
+       
+
+        public IEnumerable<CharityList> Results { get { return this._results; } }
+        
     }
 }

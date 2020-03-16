@@ -7,13 +7,13 @@ using Newtonsoft.Json.Linq;
 
 namespace SitefinityWebApp.Mvc.Models
 {
-    public class CharityList
+    public class CharityList : IComparable<CharityList>
     {
 
-        public CharityList(string title, string url)
+        public CharityList(string title, string reporturl)
         {
             this._name = title;
-            this._url = url;
+            this._url = reporturl;
             
         }
 
@@ -23,6 +23,11 @@ namespace SitefinityWebApp.Mvc.Models
 
         private readonly string _name;
         private readonly string _url;
-       
+
+        public int CompareTo(CharityList other)
+        {
+            return this.Name.CompareTo(other.Name);
+                
+        }
     }
 }

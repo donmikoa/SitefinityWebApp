@@ -928,6 +928,8 @@
     <Content Include="extensions.bundle.js" />
     <Content Include="Mvc\Controllers\readme.txt" />
     <Content Include="Mvc\Models\readme.txt" />
+    <Content Include="Mvc\Scripts\charitySearchBox.js" />
+    <Content Include="Mvc\Scripts\charitySearchResults.js" />
     <Content Include="Mvc\Scripts\Give-Script.js" />
     <Content Include="Mvc\Views\readme.txt" />
     <Content Include="Mvc\Views\Shared\readme.txt" />
@@ -1063,11 +1065,14 @@
     <Compile Include="AzureWebRole.cs" />
     <Compile Include="Mvc\Controllers\BooksController.cs" />
     <Compile Include="Mvc\Controllers\CharityListController.cs" />
+    <Compile Include="Mvc\Controllers\CharitySearchResultsController.cs" />
     <Compile Include="Mvc\Controllers\MessageWidgetController.cs" />
     <Compile Include="Mvc\Models\Book.cs" />
     <Compile Include="Mvc\Models\BooksViewModel.cs" />
     <Compile Include="Mvc\Models\CharityList.cs" />
     <Compile Include="Mvc\Models\CharityListViewModel.cs" />
+    <Compile Include="Mvc\Models\CharitySearchResult.cs" />
+    <Compile Include="Mvc\Models\CharitySearchResultsViewModel.cs" />
     <Compile Include="Mvc\Models\MessageWidgetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1082,6 +1087,7 @@
     <EmbeddedResource Include="Mvc\Views\Books\Index.cshtml" />
     <EmbeddedResource Include="Mvc\Scripts\books-widget.js" />
     <Content Include="Mvc\Views\CharityList\Default.cshtml" />
+    <Content Include="Mvc\Views\CharitySearchResult\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

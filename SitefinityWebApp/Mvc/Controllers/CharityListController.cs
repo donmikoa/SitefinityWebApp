@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 
 
+
 namespace SitefinityWebApp.Mvc.Controllers
 {
     [ControllerToolboxItem(Name = "Charity List", Title = "Charity List", SectionName = "MvcWidgets")]
@@ -110,8 +111,7 @@ namespace SitefinityWebApp.Mvc.Controllers
             // Parse results
             JObject parsedResults = JObject.Parse(solrSearchResponse);
 
-            // Store relevant information
-            int numberOfResults = int.Parse(parsedResults["response"]["numFound"].ToString());
+            
             IList<JToken> results = parsedResults["response"]["docs"].Children().ToList();
 
             // Serialize JSON results into .NET objects
@@ -120,9 +120,20 @@ namespace SitefinityWebApp.Mvc.Controllers
             {
                 // JToken.ToObject is a helper method that uses JsonSerializer internally
                 CharityList searchResult = result.ToObject<CharityList>();
+                
                 resultsList.Add(searchResult);
+
             }
-            return this.View("Default");
+
+            resultsList.Sort();
+            
+
+
+            IEnumerable<CharityList> searchList = resultsList;
+
+            CharityListViewModel viewModel = new CharityListViewModel(searchList);
+
+            return this.View("Default",viewModel);
         }
 
 
@@ -155,7 +166,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
             // sort the response
 
-            url += "&sort=title ASC";
+            //url += "&sort=title ASC";
 
             // format response as json
             url += "&wt=json";
