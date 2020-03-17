@@ -70,7 +70,7 @@ namespace SitefinityWebApp.Mvc.Controllers
             {"charity-other-charitable-organizations", "90021-950"},
             {"charity-police-firefighter-organizations", "90021-750"},
             {"charity-relief-development", "90021-800"},
-            {"Religious", "90021-850"},
+            {"charity-religious", "90021-850"},
             {"charity-veterans-military", "90021-900"},
             {"blind-visually-impaired", "90021-150"}
         };
