@@ -20,7 +20,7 @@ namespace SitefinityWebApp.Mvc.Controllers
     [ControllerToolboxItem(Name = "Charity List", Title = "Charity List", SectionName = "MvcWidgets")]
     public class CharityListController : Controller
     {
-        
+
 
         public Dictionary<string, string> charitytype = new Dictionary<string, string>()
         {
@@ -46,10 +46,10 @@ namespace SitefinityWebApp.Mvc.Controllers
             {"charity-relief-development", "Relief & Development"},
             {"charity-religious", "Religious"},
             {"charity-veterans-military", "Veterans & Military"},
-           
+
         };
 
-        private Dictionary<string, string> categoryList = new Dictionary<string, string>()
+        public Dictionary<string, string> categoryList = new Dictionary<string, string>()
         {
             {"charity-american-indian", "90021-001"},
             {"charity-animal-protection", "90021-050"},
@@ -101,9 +101,11 @@ namespace SitefinityWebApp.Mvc.Controllers
             {"Blind & Visually Impaired", "90021-150"}
         };
 
-        public ActionResult Index(string category = null)
+        
+        public ActionResult Index(string category)
         {
-            string requestURL = assembleRequestUrl(category);
+            string charityCategory = category;
+            string requestURL = assembleRequestUrl(charityCategory);
 
             // Create web request
             string solrSearchResponse = webRequest(requestURL);
@@ -138,7 +140,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 
 
-        private string assembleRequestUrl(string categories = null)
+        private string assembleRequestUrl(string categories)
         {
             // Assemble request URL
             string url = "http://192.168.225.84:8080/solr/WGA/select?q=(nationalcharity:true";
@@ -151,9 +153,9 @@ namespace SitefinityWebApp.Mvc.Controllers
             if (categories != null)
             {
                 url += " AND tobcode:";
-                url.Concat(categoryList[categories]);
+                url += categoryList[categories];
                 url += ")";
-
+             
             }
             else
             {

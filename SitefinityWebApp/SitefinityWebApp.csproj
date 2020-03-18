@@ -1087,7 +1087,7 @@
     <EmbeddedResource Include="Mvc\Views\Books\Index.cshtml" />
     <EmbeddedResource Include="Mvc\Scripts\books-widget.js" />
     <Content Include="Mvc\Views\CharityList\Default.cshtml" />
-    <Content Include="Mvc\Views\CharitySearchResult\Default.cshtml" />
+    <Content Include="Mvc\Views\CharitySearchResults\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
