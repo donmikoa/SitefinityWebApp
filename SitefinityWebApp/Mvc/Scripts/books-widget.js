@@ -1,33 +1,31 @@
-﻿; (function ($) {
-	   var initializeBooksWidget = function (element) {
-		   var sf_appPath = window.sf_appPath || "/";
-		   var widget = $(element);
-		   var currentPage = widget.find('input[data-role=current-page]').val();
-		   var pointSpans = widget.find('span[data-role=points]');
- 
-		   $.get(sf_appPath + 'web-interface/books/points/' + currentPage, function (data) {
-			   for (var i = 0; i < pointSpans.length && i < data.length; i++) {
-				   $(pointSpans[i]).html(data[i]);
-			   }
-		   });
+﻿(function ($) {
+    var initializeBooksWidget = function (element) {
+        var sf_appPath = window.sf_appPath || "/";
+        var widget$ = $(element);
 
-		   widget.find('a[data-role=vote-link]').each(function (index, value) {
-			   var link = $(value);
-			   var id = index + (currentPage - 1) * 5; // PageSize is a constant 5
-			   var idx = index;
-			   link.click(function () {
-				   $.post(sf_appPath + 'web-interface/books/vote/' + id, function (data) {
-					   $(pointSpans[idx]).html(data);
-				   });
- 
-				   return false;
-			   });
-		   });
-	   };
+        widget$.find($('div[data-role=book-item]')).each(function (index, item) {
+            var item$ = $(item);
+            var id = item$.find('input[data-role=book-id]').val();
+            var link$ = item$.find('a[data-role=vote-link]');
+            var points$ = item$.find('span[data-role=points]');
 
-		$(function () {
-		   $('div[data-role=books-widget]').each(function (index, value) {
-			   initializeBooksWidget(value);
-		   });
-	   });
+            $.get(sf_appPath + 'web-interface/books/points/' + id, function (data) {
+                points$.html(data);
+            });
+
+            link$.click(function () {
+                $.post(sf_appPath + 'web-interface/books/vote/' + id, function (data) {
+                    points$.html(data);
+                });
+
+                return false;
+            });
+        });
+    };
+
+    $(function () {
+        $('div[data-role=books-widget]').each(function (index, value) {
+            initializeBooksWidget(value);
+        });
+    });
 })(jQuery);

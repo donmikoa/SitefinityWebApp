@@ -16,17 +16,28 @@ namespace SitefinityWebApp.Mvc.Models
 
         public string Author
         {
-            get { return this._author; }
+            get
+            {
+                return this._author;
+            }
         }
 
         public string Title
         {
-            get { return this._title; }
+            get
+            {
+                return this._title;
+            }
         }
+
         public int Points
         {
-            get { return this._points; }
+            get
+            {
+                return this._points;
+            }
         }
+
         public void Vote()
         {
             this._points++;

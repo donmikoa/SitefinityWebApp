@@ -18,35 +18,52 @@ namespace SitefinityWebApp.Mvc.Models
 
         public IEnumerable<Book> Items
         {
-            get { return this._items; }
+            get
+            {
+                return this._items;
+            }
         }
 
         public int PageCount
         {
-            get { return this._pageCount; }
+            get
+            {
+                return this._pageCount;
+            }
         }
 
         public int CurrentPage
         {
-            get { return this._currentPage; }
+            get
+            {
+                return this._currentPage;
+            }
         }
 
         public string NextPageUrl
         {
-            get { return this.IndexActionUrl(this.CurrentPage + 1); }
+            get
+            {
+                return this.IndexActionUrl(this.CurrentPage + 1);
+            }
         }
 
         public string PreviousPageUrl
         {
-            get { return this.IndexActionUrl(this.CurrentPage - 1); }
+            get
+            {
+                return this.IndexActionUrl(this.CurrentPage - 1);
+            }
         }
+
         private string IndexActionUrl(int page)
         {
             StringBuilder sb = new StringBuilder();
             var currentNode = SiteMap.CurrentNode;
             if (currentNode != null)
                 sb.Append(currentNode.Url);
-            else sb.Append(VirtualPathUtility.RemoveTrailingSlash(SystemManager.CurrentHttpContext.Request.Path));
+            else
+                sb.Append(VirtualPathUtility.RemoveTrailingSlash(SystemManager.CurrentHttpContext.Request.Path));
             sb.Append("/");
             sb.Append(page);
 
@@ -56,6 +73,5 @@ namespace SitefinityWebApp.Mvc.Models
         private readonly IEnumerable<Book> _items;
         private readonly int _pageCount;
         private readonly int _currentPage;
-
     }
 }
