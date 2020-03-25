@@ -1,0 +1,69 @@
+﻿.form-container label {
+    font-size: 16px;
+    font-weight: normal;
+    margin-right: 20px;
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: white;
+}
+
+.form-container select {
+    margin: 0 0 6px 0;
+    border: 1px solid #e7e7e7;
+    -moz-border-radius: 5px;
+   
+    border-radius: 5px;
+    padding: 5px;
+    width: 300px;
+    max-width: 300px;
+}
+
+ul .directory-list {
+    text-decoration: none !Important;
+}
+
+.form-container {
+    color: #333;
+    font-size: 16px;
+}
+
+.directory-item {
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.form-container th label {
+    text-align: right;
+}
+
+.form-container select {
+    width: 150px;
+    background: #e7e7e7;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(231, 231, 231, 1));
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(231, 231, 231, 1));
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(231, 231, 231, 1));
+}
+
+.form-container button[type="set"].refresh-btn {
+    background: url(https://www.give.org/images/Give/refresh-icon.png) no-repeat right center;
+    padding: 0 25px 0 0;
+    margin: 0;
+    font-weight: normal;
+    color: #0e839f !important;
+    behavior: none;
+}
+
+.form-container .form-filter th label,
+.form-container .form-filter th select {
+    margin-right: 20px;
+}
+
+.subpage a {
+    color: #0d7c99;
+    text-decoration: none;
+}

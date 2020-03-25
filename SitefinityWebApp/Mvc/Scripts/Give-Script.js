@@ -12,11 +12,26 @@
 });
 
 
+window.onload = function () {
+	var selItem = sessionStorage.getItem("SelItem");
+	$('.charity-type').val(selItem);
+}
 
-
-
-$('.letter').each(function () {
-	if ($(this).next('ul').is(':empty'))
-		$(this).addClass('hiddedn');
+$('.charity-type').change(function () {
+	var selVal = $(this).val();
+	sessionStorage.setItem("SelItem", selVal);
 });
+
+$('.directory-list').each(function () {
+	if ($.trim($(this).text()) == '' && $(this).children().length == 0) {
+		$(this).parent().hide();
+		$(this).html('<li>No charities found for letter message is content manageable</li>');
+	}
+});
+
+
+document.getElementById("refresh-btn").onclick = function () {
+	$('.charity-type').val('select').trigger('change');
+};
+
 
