@@ -14,7 +14,12 @@
 
 window.onload = function () {
 	var selItem = sessionStorage.getItem("SelItem");
-	$('.charity-type').val(selItem);
+	if (selItem == null) {
+		selItem = 'select';
+	} else {
+		$('.charity-type').val(selItem);
+	}
+	
 }
 
 $('.charity-type').change(function () {

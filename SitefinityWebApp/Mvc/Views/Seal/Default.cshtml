@@ -12,8 +12,15 @@
 
 
 
-<div>
+<div style="margin:0px 20px;">
     <h2>National Charity Seal Participants</h2>
+    <p>National charities that are currently participating in the BBB Wise Giving Alliance's National Charity Seal Program are listed below. Inclusion in this list means that:</p>
+    <ol>
+        <li>BBB WGA evaluated materials provided by these organizations and concluded that these charities met the Standards for Charity Accountability in effect at the time of the review, and</li>
+        <li>Following the evaluation, the charities listed below chose to apply for the BBB Wise Giving Alliance National Charity Seal. To use the seal logo on its website and in printed materials, a charity pays a fee and signs a license agreement. </li>    
+    </ol>
+    <p>Participation in the seal program is completely voluntary, and the BBB WGA's process for reviewing and publishing its charity evaluations is the same for seal participants and non-participants alike. There is no charge to charities for an evaluation by the BBB Wise Giving Alliance, and the resulting report is freely accessible to the public on the give.org website.</p>
+    <h3>Current Participants</h3>
     <div class="form-container">
         <table>
             <tbody>
@@ -103,7 +110,7 @@
                 @foreach (var item in Model.Results)
 
                 {
-                    if (Regex.IsMatch(item.Name.Substring(0, 1), @"^\d+$"))
+                    if (char.IsNumber(item.Name.ToCharArray().ElementAt(0)))
                     {
                         <li class="directory"><a href="@item.Url">@item.Name</a></li>
                         

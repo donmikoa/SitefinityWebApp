@@ -12,8 +12,8 @@
 
 
 
-<div>
-    <h2>National Charity Report Directory</h2>
+<div style="margin:0px 20px;">
+    <h2>Alphabetical List Of Charities</h2>
     <div class="form-container">
         <table>
             <tbody>
@@ -99,7 +99,17 @@
     <div class="directory-container">
         <div id="#" class="letter-container directory-item">
             <h2 style="padding-left:37px" class="letter">#</h2>
-            
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+                    if (item.Name == null ||  item.Name.StartsWith("1") || item.Name.StartsWith("2") || item.Name.StartsWith("3") || item.Name.StartsWith("4") || item.Name.StartsWith("5") || item.Name.StartsWith("6") || item.Name.StartsWith("7") || item.Name.StartsWith("8") || item.Name.StartsWith("9") || item.Name.StartsWith("0") )
+                    {
+                        <li class="directory"><a href="@item.Url">@item.Name</a></li>
+                    };
+                }
+
+            </ul>
         </div>
         <div id="A" class="letter-container directory-item">
             <h2 style="padding-left:37px" class="letter">A</h2>

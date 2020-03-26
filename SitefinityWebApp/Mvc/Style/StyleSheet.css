@@ -12,17 +12,6 @@
     background-color: white;
 }
 
-.form-container select {
-    margin: 0 0 6px 0;
-    border: 1px solid #e7e7e7;
-    -moz-border-radius: 5px;
-   
-    border-radius: 5px;
-    padding: 5px;
-    width: 300px;
-    max-width: 300px;
-}
-
 ul .directory-list {
     text-decoration: none !Important;
 }
@@ -42,7 +31,12 @@ ul .directory-list {
 }
 
 .form-container select {
-    width: 150px;
+    margin: 0 0 6px 0;
+    border: 1px solid #e7e7e7;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 300px;
     background: #e7e7e7;
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(231, 231, 231, 1));
     background: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(231, 231, 231, 1));
