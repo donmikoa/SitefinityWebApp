@@ -1064,10 +1064,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="AzureWebRole.cs" />
+    <Compile Include="Mvc\Controllers\AllCharityController.cs" />
     <Compile Include="Mvc\Controllers\BooksController.cs" />
     <Compile Include="Mvc\Controllers\CharityListController.cs" />
     <Compile Include="Mvc\Controllers\CharitySearchResultsController.cs" />
     <Compile Include="Mvc\Controllers\MessageWidgetController.cs" />
+    <Compile Include="Mvc\Controllers\SealController.cs" />
+    <Compile Include="Mvc\Models\AllCharity.cs" />
+    <Compile Include="Mvc\Models\AllCharityViewModel.cs" />
     <Compile Include="Mvc\Models\Book.cs" />
     <Compile Include="Mvc\Models\BooksViewModel.cs" />
     <Compile Include="Mvc\Models\CharityList.cs" />
@@ -1075,6 +1079,8 @@
     <Compile Include="Mvc\Models\CharitySearchResult.cs" />
     <Compile Include="Mvc\Models\CharitySearchResultsViewModel.cs" />
     <Compile Include="Mvc\Models\MessageWidgetModel.cs" />
+    <Compile Include="Mvc\Models\Seal.cs" />
+    <Compile Include="Mvc\Models\SealViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1089,6 +1095,8 @@
     <EmbeddedResource Include="Mvc\Scripts\books-widget.js" />
     <Content Include="Mvc\Views\CharityList\Default.cshtml" />
     <Content Include="Mvc\Views\CharitySearchResults\Default.cshtml" />
+    <Content Include="Mvc\Views\Seal\Default.cshtml" />
+    <Content Include="Mvc\Views\AllCharity\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

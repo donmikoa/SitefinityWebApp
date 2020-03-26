@@ -1,0 +1,519 @@
+@model SitefinityWebApp.Mvc.Models.AllCharityViewModel
+
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using System.Text.RegularExpressions;
+
+@Html.Script(ScriptRef.JQuery, "top")
+
+<head>
+    <link href="~/Mvc/Style/StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+
+<div>
+    <h2>National Charity Report Directory</h2>
+    <div class="form-container">
+        <table>
+            <tbody>
+                <tr style="">
+                    <td><label for="charity-type">Filter by charity type:</label></td>
+                </tr>
+                <tr style="">
+                    <td>
+                        <select name="charity-type" class="charity-type" onChange="window.location.href=this.value">
+                            <option value="select">Select One</option>
+                            <option value="charity-american-indian">American Indian</option>
+                            <option value="charity-animal-protection">Animal Protection</option>
+                            <option value="charity-arts-culture">Arts &amp; Culture</option>
+                            <option value="charity-cancer">Cancer</option>
+                            <option value="blind-visually-impaired">Charity -&nbsp;Blind &amp; Visually Impaired</option>
+                            <option value="charity-child-sponsorship">Child Sponsorship</option>
+                            <option value="charity-children-youth">Children &amp; Youth</option>
+                            <option value="charity-civil-rights">Civil Rights</option>
+                            <option value="charity-community-development-civic-organizations">Community Development &amp; Civic Organizations</option>
+                            <option value="charity-education-literacy">Education &amp; Literacy</option>
+                            <option value="charity-elderly">Elderly</option>
+                            <option value="charity-environment">Environment</option>
+                            <option value="charity-health">Health</option>
+                            <option value="charity-human-services">Human Services (i.e. assistance to individuals &amp; families)</option>
+                            <option value="charity-law-public-interest">Law &amp; Public Interest</option>
+                            <option value="charity-local">Local</option>
+                            <option value="charity-national">National</option>
+                            <option value="charity-other-charitable-organizations">Other Charitable Organizations</option>
+                            <option value="charity-police-firefighter-organizations">Police &amp; Firefighter Organizations</option>
+                            <option value="charity-relief-development">Relief &amp; Development</option>
+                            <option value="charity-religious">Religious</option>
+                            <option value="charity-veterans-military">Veterans &amp; Military</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="charity-alphabetical">Filter by letter:</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="charity-alphabetical" class="charity-alphabetical">
+                            <option value="">Select One</option>
+                            <option value="#">#</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                            <option value="I">I</option>
+                            <option value="J">J</option>
+                            <option value="K">K</option>
+                            <option value="L">L</option>
+                            <option value="M">M</option>
+                            <option value="N">N</option>
+                            <option value="O">O</option>
+                            <option value="P">P</option>
+                            <option value="Q">Q</option>
+                            <option value="R">R</option>
+                            <option value="S">S</option>
+                            <option value="T">T</option>
+                            <option value="U">U</option>
+                            <option value="V">V</option>
+                            <option value="W">W</option>
+                            <option value="X">X</option>
+                            <option value="Y">Y</option>
+                            <option value="Z">Z</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="btn-row">
+                    <td>
+                        <button id="refresh-btn">Reset</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="divider_grey_20">&nbsp;</div>
+    </div>
+    <div class="directory-container">
+        <div id="#" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">#</h2>
+            
+        </div>
+        <div id="A" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">A</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("A"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+
+                }
+            </ul>
+        </div>
+        <div id="B" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">B</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("B"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+
+                }
+            </ul>
+        </div>
+        <div id="C" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">C</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("C"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+
+                }
+            </ul>
+        </div>
+        <div id="D" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">D</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("D"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+
+                }
+            </ul>
+        </div>
+        <div id="E" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">E</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("E"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+
+                }
+            </ul>
+        </div>
+        <div id="F" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">F</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("F"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="G" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">G</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("G"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="H" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">H</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("H"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="I" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">I</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("I"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="J" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">J</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("J"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="K" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">K</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("K"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="L" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">L</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("L"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="M" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">M</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("M"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="N" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">N</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("N"))
+                    {
+
+
+                        <li><a href="@item.Url">@item.Name</a></li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <div id="O" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">O</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("O"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="P" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">P</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("P"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="Q" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">Q</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("Q"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="R" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">R</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("R"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+
+        <div id="S" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">S</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("S"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="T" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">T</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("T"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="U" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">U</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("U"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="V" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">V</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("V"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="W" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">W</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("W"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="X" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">X</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("X"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="Y" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">Y</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("Y"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div id="Z" class="letter-container directory-item">
+            <h2 style="padding-left:37px" class="letter">Z</h2>
+            <ul style="list-style:none" class="directory-list">
+                @foreach (var item in Model.Results)
+
+                {
+
+                    if (item.Name.StartsWith("Z"))
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@Html.Script(Url.WidgetContent("Mvc/Scripts/Give-Script.js"), "bottom")
