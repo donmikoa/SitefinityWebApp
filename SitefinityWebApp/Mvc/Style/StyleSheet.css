@@ -31,6 +31,7 @@ ul .directory-list {
 }
 
 .form-container select {
+    width: 200px;
     margin: 0 0 6px 0;
     border: 1px solid #e7e7e7;
     -moz-border-radius: 5px;
