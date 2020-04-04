@@ -30,7 +30,7 @@ $('.charity-type').change(function () {
 $('.directory-list').each(function () {
 	if ($.trim($(this).text()) == '' && $(this).children().length == 0) {
 		$(this).parent().hide();
-		$(this).html('<li>No charities found for letter message is content manageable</li>');
+		$(this).html('<li>No charities found for chosen filter.</li>');
 	}
 });
 
