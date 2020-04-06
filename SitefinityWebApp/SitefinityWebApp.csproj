@@ -1079,6 +1079,7 @@
     <Compile Include="Mvc\Models\CharitySearchResult.cs" />
     <Compile Include="Mvc\Models\CharitySearchResultsViewModel.cs" />
     <Compile Include="Mvc\Models\MessageWidgetModel.cs" />
+    <Compile Include="Mvc\Models\RecentNews.cs" />
     <Compile Include="Mvc\Models\Seal.cs" />
     <Compile Include="Mvc\Models\SealViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
