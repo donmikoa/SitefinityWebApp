@@ -6,9 +6,8 @@
 
 @Html.Script(ScriptRef.JQuery, "top")
 
-<head>
-    <link href="~/Mvc/Style/StyleSheet.css" rel="stylesheet" type="text/css" />
-</head>
+
+@Html.StyleSheet(Url.WidgetContent("~/Mvc/Style/StyleSheet.css"), "head")
 
 
 
@@ -16,7 +15,7 @@
     <h2>National Charity Seal Participants</h2>
     <p>Nationally soliciting charities that are currently participating in the BBB Wise Giving Alliance's National Charity Seal Program are listed below. Inclusion in this list means that:</p>
     <ol>
-        <li>BBB WGA evaluated information and materials provided by these organizations and concluded that these charities met all 20 of the BBB Standards for Charity Accountability. Charities that meet all of these Standards are called a BBB Accredited Charities. There is no charge to the charity for this accountability accreditation.</li>  
+        <li>BBB WGA evaluated information and materials provided by these organizations and concluded that these charities met all 20 of the BBB Standards for Charity Accountability. Charities that meet all of these Standards are called a BBB Accredited Charities. There is no charge to the charity for this accountability accreditation.</li>
         <li>Following the evaluation, a BBB Accredited Charity has the <strong>option</strong> to license the BBB Accredited Charity Seal for a sliding scale fee. The seal logo can then be placed on the charity's website and in printed materials. </li>
     </ol>
     <p>Participation in the seal program is completely voluntary, and BBB WGA's process for reviewing and publishing its charity evaluations is the same for seal participants and non-participants alike.</p>
@@ -103,11 +102,11 @@
                     if (char.IsNumber(item.Name.ToCharArray().ElementAt(0)))
                     {
                         <li class="directory"><a href="@item.Url">@item.Name</a></li>
-                        
+
                     }
 
                 }
-               
+
             </ul>
         </div>
         <div id="A" class="letter-container directory-item">

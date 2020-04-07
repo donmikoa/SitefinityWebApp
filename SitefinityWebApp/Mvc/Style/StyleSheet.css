@@ -62,3 +62,7 @@ ul .directory-list {
     color: #0d7c99;
     text-decoration: none;
 }
+
+.recent {
+    list-style-type: none;
+}

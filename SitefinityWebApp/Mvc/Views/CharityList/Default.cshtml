@@ -6,9 +6,8 @@
 
 @Html.Script(ScriptRef.JQuery, "top")
 
-<head>
-    <link href="~/Mvc/Style/StyleSheet.css" rel="stylesheet" type="text/css" />
-</head>
+
+@Html.StyleSheet(Url.WidgetContent("~/Mvc/Style/StyleSheet.css"), "head")
 
 
 
@@ -84,8 +83,8 @@
                 <button id="refresh-btn">Reset</button>
             </div>
         </div>
-        
-        
+
+
         <div class="divider_grey_20">&nbsp;</div>
     </div>
     <div class="directory-container">
@@ -98,11 +97,11 @@
                     if (Regex.IsMatch(item.Name.Substring(0, 1), @"^\d+$"))
                     {
                         <li class="directory"><a href="@item.Url">@item.Name</a></li>
-                        
+
                     }
 
                 }
-               
+
             </ul>
         </div>
         <div id="A" class="letter-container directory-item">

@@ -6,9 +6,8 @@
 
 @Html.Script(ScriptRef.JQuery, "top")
 
-<head>
-    <link href="~/Mvc/Style/StyleSheet.css" rel="stylesheet" type="text/css" />
-</head>
+
+@Html.StyleSheet(Url.WidgetContent("~/Mvc/Style/StyleSheet.css"), "head")
 
 
 
@@ -36,7 +35,8 @@
                     <option value="charity-environment">Environment</option>
                     <option value="charity-health">Health</option>
                     <option value="charity-human-services">Human Services (i.e. assistance to individuals &amp; families)</option>
-                    <option value="charity-law-public-interest">Law &amp; Public Interest</option><option value="charity-police-firefighter-organizations">Police &amp; Firefighter Organizations</option>
+                    <option value="charity-law-public-interest">Law &amp; Public Interest</option>
+                    <option value="charity-police-firefighter-organizations">Police &amp; Firefighter Organizations</option>
                     <option value="charity-relief-development">Relief &amp; Development</option>
                     <option value="charity-religious">Religious</option>
                     <option value="charity-veterans-military">Veterans &amp; Military</option>
@@ -92,7 +92,7 @@
                 @foreach (var item in Model.Results)
 
                 {
-                    if (item.Name == null ||  item.Name.StartsWith("1") || item.Name.StartsWith("2") || item.Name.StartsWith("3") || item.Name.StartsWith("4") || item.Name.StartsWith("5") || item.Name.StartsWith("6") || item.Name.StartsWith("7") || item.Name.StartsWith("8") || item.Name.StartsWith("9") || item.Name.StartsWith("0") )
+                    if (item.Name == null || item.Name.StartsWith("1") || item.Name.StartsWith("2") || item.Name.StartsWith("3") || item.Name.StartsWith("4") || item.Name.StartsWith("5") || item.Name.StartsWith("6") || item.Name.StartsWith("7") || item.Name.StartsWith("8") || item.Name.StartsWith("9") || item.Name.StartsWith("0"))
                     {
                         <li class="directory"><a href="@item.Url">@item.Name</a></li>
                     };

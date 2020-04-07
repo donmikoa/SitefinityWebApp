@@ -1,15 +1,27 @@
 ﻿@model SitefinityWebApp.Mvc.Models.RecentNewsModel
 
-<ol>
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using System.Text.RegularExpressions;
+
+
+
+@Html.StyleSheet(Url.WidgetContent("~/Mvc/Style/StyleSheet.css"), "head")
+
+
+<ul class="recent">
     @foreach (var newsItem in Model.Items)
     {
-        <li>
-            <a href="/news/@Html.Raw(newsItem.ItemDefaultUrl)"><strong>
-                @Html.Raw(newsItem.Title)
-            </strong></a>
+        <li style="text-decoration:none">
+            <a href="/news/@Html.Raw(newsItem.ItemDefaultUrl)">
+                <strong>
+                    @Html.Raw(newsItem.Title)
+                </strong>
+            </a>
+
             <p>
-                @Html.Raw(newsItem.Content)
+                @Html.Raw(newsItem.Content.ToString().Substring(0, 200)) ... <a href="/news/@Html.Raw(newsItem.ItemDefaultUrl)">READ MORE</a>
             </p>
         </li>
     }
-</ol>
+</ul>
