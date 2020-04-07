@@ -1069,6 +1069,7 @@
     <Compile Include="Mvc\Controllers\CharityListController.cs" />
     <Compile Include="Mvc\Controllers\CharitySearchResultsController.cs" />
     <Compile Include="Mvc\Controllers\MessageWidgetController.cs" />
+    <Compile Include="Mvc\Controllers\RecentNewsController.cs" />
     <Compile Include="Mvc\Controllers\SealController.cs" />
     <Compile Include="Mvc\Models\AllCharity.cs" />
     <Compile Include="Mvc\Models\AllCharityViewModel.cs" />
@@ -1266,7 +1267,9 @@
     <Analyzer Include="..\packages\AWSSDK.S3.3.3.104.31\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.SQS.3.3.102.11\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mvc\Views\RecentNews\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
