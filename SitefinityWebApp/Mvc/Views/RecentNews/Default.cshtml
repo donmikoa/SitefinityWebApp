@@ -9,19 +9,45 @@
 @Html.StyleSheet(Url.WidgetContent("~/Mvc/Style/StyleSheet.css"), "head")
 
 
-<ul class="recent">
-    @foreach (var newsItem in Model.Items)
-    {
-        <li style="text-decoration:none">
-            <a href="/news/@Html.Raw(newsItem.ItemDefaultUrl)">
-                <strong>
-                    @Html.Raw(newsItem.Title)
-                </strong>
-            </a>
 
-            <p>
-                @Html.Raw(newsItem.Content.ToString().Substring(0, 200)) ... <a href="/news/@Html.Raw(newsItem.ItemDefaultUrl)">READ MORE</a>
-            </p>
-        </li>
-    }
-</ul>
+<div style="padding:40px 5% 2%;">
+    <div id="news-and-updates" class="col-auto text-center mx-auto">
+        <h2 style="color:#018c56;">News &amp; Updates</h2>
+        <h2 style="font-weight: lighter;">Our most recent news and videos</h2>
+        <hr style="width: 5%; height: 5px; background-color:#018c56;">
+    </div>
+    <section>
+        <div class="row pb-1">
+            <div class="col-auto mr-auto">
+                <h4 style="font-weight:lighter;" class="gallery-title">RECENT ARTICLES</h4>
+            </div>
+            <div class="col-auto ml-auto">
+                <h5 id="desktop" class="gallery-view-more">
+                    <a href="/news-and-updates-new" style="color:#018c56;">VIEW ALL ARTICLES</a>
+                </h5>
+            </div>
+        </div>
+
+        <div id="desktop" class="row text-gallery">
+            @foreach (var newsItem in Model.Items.Take(6))
+            {
+                <div class="col-sm-4 article">
+                    <h5 style="color:#018c56;">
+                        <strong>
+                            @Html.Raw(newsItem.Title)
+                        </strong>
+                    </h5>
+                    <p>
+                        @Html.Raw(newsItem.Content).ToString().Substring(5, 200) ... <span><strong><a style="        color: #018c56;
+" href="/news/@Html.Raw(newsItem.ItemDefaultUrl)">READ MORE</a></strong></span>
+                    </p>
+                </div>
+            }
+        </div>
+    </section>
+</div>
+
+
+
+
+
