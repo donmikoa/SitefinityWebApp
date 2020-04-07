@@ -594,11 +594,6 @@ div.for-charities {
     display: none;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
 
 nav {
     position: relative;
