@@ -1080,7 +1080,7 @@
     <Compile Include="Mvc\Models\CharitySearchResult.cs" />
     <Compile Include="Mvc\Models\CharitySearchResultsViewModel.cs" />
     <Compile Include="Mvc\Models\MessageWidgetModel.cs" />
-    <Compile Include="Mvc\Models\RecentNews.cs" />
+    <Compile Include="Mvc\Models\RecentNewsModel.cs" />
     <Compile Include="Mvc\Models\Seal.cs" />
     <Compile Include="Mvc\Models\SealViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1099,6 +1099,7 @@
     <Content Include="Mvc\Views\CharitySearchResults\Default.cshtml" />
     <Content Include="Mvc\Views\Seal\Default.cshtml" />
     <Content Include="Mvc\Views\AllCharity\Default.cshtml" />
+    <Content Include="Mvc\Views\RecentNews\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -1267,9 +1268,7 @@
     <Analyzer Include="..\packages\AWSSDK.S3.3.3.104.31\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.SQS.3.3.102.11\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mvc\Views\RecentNews\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

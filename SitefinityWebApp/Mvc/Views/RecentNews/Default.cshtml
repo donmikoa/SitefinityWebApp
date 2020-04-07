@@ -1,0 +1,15 @@
+﻿@model SitefinityWebApp.Mvc.Models.RecentNewsModel
+
+<ul>
+    @foreach (var newsItem in Model.Items)
+    {
+        <li>
+            <strong>
+                @Html.Raw(newsItem.Title)
+            </strong>
+            <p>
+                @Html.Raw(newsItem.Content)
+            </p>
+        </li>
+    }
+</ul>
