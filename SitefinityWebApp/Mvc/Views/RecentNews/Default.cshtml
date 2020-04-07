@@ -9,7 +9,6 @@
 @Html.StyleSheet(Url.WidgetContent("~/Mvc/Style/StyleSheet.css"), "head")
 
 
-
 <div style="padding:40px 5% 2%;">
     <div id="news-and-updates" class="col-auto text-center mx-auto">
         <h3 style="color:#018c56;">NEWS &amp; UPDATES</h3>
@@ -38,8 +37,7 @@
                         </strong>
                     </h5>
                     <p>
-                        @Html.Raw(newsItem.Content).ToString().Substring(5, 200) ... <span><strong><a style="font-size:16px; color: #018c56;
-" href="/news/@Html.Raw(newsItem.ItemDefaultUrl)">READ MORE</a></strong></span>
+                        @Html.Raw(newsItem.Content).ToString().Substring(5, 210) ... <span><strong><a style="font-size:16px; color: #018c56;" href="@string.Format("/news{0}" , newsItem.ItemDefaultUrl)">READ MORE</a></strong></span>
                     </p>
                 </div>
             }
