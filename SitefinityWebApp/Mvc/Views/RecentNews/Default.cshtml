@@ -1,15 +1,15 @@
 ﻿@model SitefinityWebApp.Mvc.Models.RecentNewsModel
 
-<ul>
+<ol>
     @foreach (var newsItem in Model.Items)
     {
         <li>
-            <strong>
+            <a href="/news/@Html.Raw(newsItem.ItemDefaultUrl)"><strong>
                 @Html.Raw(newsItem.Title)
-            </strong>
+            </strong></a>
             <p>
                 @Html.Raw(newsItem.Content)
             </p>
         </li>
     }
-</ul>
+</ol>
