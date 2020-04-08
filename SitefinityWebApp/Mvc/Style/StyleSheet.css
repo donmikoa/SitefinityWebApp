@@ -252,9 +252,7 @@ input {
     width: 45%;
 }
 
-    .form-control-underlined::placeholder {
-        color: #fff;
-    }
+  
 
     .form-control-underlined::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
@@ -542,9 +540,7 @@ div.for-charities {
         font-size: 14px;
     }
 
-    .footer-engage .newsletter-signup::placeholder {
-        color: #fff;
-    }
+   
 
     .footer-engage .input-group-append {
         background-color: var(--page-color);
@@ -652,21 +648,7 @@ nav {
     opacity: 1;
 }
 
-.dropdownBackground {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    background: #ECECEC;
-    border-radius: 4px;
-    box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s, opacity 0.1s, translate 0.2s;
-    transform-origin: 50% 0%;
-    display: flex;
-    justify-content: center;
-    opacity: 0;
-    top: -9999px;
-    left: -9999px;
-}
+
 
 .dropdown1a {
     left: -425px;
@@ -855,11 +837,7 @@ nav {
                     transform: rotate(-45deg);
                 }
 
-        .topSearch input::placeholder {
-            color: white;
-            opacity: 0.5;
-            font-weight: bolder;
-        }
+       
 
 #subLink {
     margin: 0;
