@@ -1088,6 +1088,7 @@
     <Compile Include="Mvc\Controllers\CharitySearchResultsController.cs" />
     <Compile Include="Mvc\Controllers\MessageWidgetController.cs" />
     <Compile Include="Mvc\Controllers\RecentNewsController.cs" />
+    <Compile Include="Mvc\Controllers\RecentVideosController.cs" />
     <Compile Include="Mvc\Controllers\SealController.cs" />
     <Compile Include="Mvc\Models\AllCharity.cs" />
     <Compile Include="Mvc\Models\AllCharityViewModel.cs" />
@@ -1099,6 +1100,7 @@
     <Compile Include="Mvc\Models\CharitySearchResultsViewModel.cs" />
     <Compile Include="Mvc\Models\MessageWidgetModel.cs" />
     <Compile Include="Mvc\Models\RecentNewsModel.cs" />
+    <Compile Include="Mvc\Models\RecentVideos.cs" />
     <Compile Include="Mvc\Models\Seal.cs" />
     <Compile Include="Mvc\Models\SealViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1118,6 +1120,7 @@
     <Content Include="Mvc\Views\Seal\Default.cshtml" />
     <Content Include="Mvc\Views\AllCharity\Default.cshtml" />
     <Content Include="Mvc\Views\RecentNews\Default.cshtml" />
+    <Content Include="Mvc\Views\RecentVideos\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
