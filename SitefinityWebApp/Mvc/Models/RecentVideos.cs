@@ -7,6 +7,7 @@ using Google.Apis.YouTube.v3;
 
 namespace SitefinityWebApp.Mvc.Models
 {
+    //new Video Model
     public class RecentVideos
     {
         public string Descriptions { get; set; }
